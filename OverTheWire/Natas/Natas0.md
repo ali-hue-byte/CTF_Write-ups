@@ -8,4 +8,4 @@ Right Click -> Inspect to view source code.
 ## Password found:
 [Not disclosed — solve it yourself!]
 ## Next Level: 
-[[Natas1]]
+[Natas1](./Natas1.md)
