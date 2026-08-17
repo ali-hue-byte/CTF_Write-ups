@@ -1,3 +1,5 @@
+# Natas2
+
 #natas #directory-listing #information-disclosure #credential-leak
 
 ## Vulnerability:
