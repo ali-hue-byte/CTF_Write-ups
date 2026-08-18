@@ -83,7 +83,6 @@ The query returns a row only if the user is `natas16` and the password starts wi
 We can use this method to retrieve the password. Each time we find the correct character, we start guessing the next one, until we find the full 32 characters key. 
 
 > [!NOTE]
-> BINARY
 > `BINARY` makes the comparison **case-sensitive**. Without it, MySQL may treat uppercase and lowercase letters as equal (for example, `A` and `a`). Using `BINARY` ensures that each character is matched exactly, allowing the password to be extracted accurately.
 ###### 4) Using python script to automate the task
 Firstly, we'll analyze the request made by the web application using burp suite:
