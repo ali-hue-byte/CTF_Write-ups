@@ -1,7 +1,7 @@
 # Challenges 
 
 ### Easy:
- - [BankGPT](./Rooms/BankGPT.md) — prompt injection
+ - [BankGPT](./../Rooms/BankGPT.md) — prompt injection
 
 ### Medium: 
 
