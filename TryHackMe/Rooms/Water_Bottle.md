@@ -7,7 +7,7 @@ Used google and google maps to find the information.
 #### Steps: 
 ###### 1) Creating a list of water stations
 Searched Google Maps for water stations near Boni Avenue. 
-Found that one location previously operated as "<NAME>" (2014) and has since been replaced with "<New>" (2026), this was the only station matching that change pattern.
+Found that one location previously operated as `<NAME>` (2014) and has since been replaced with `<New>` (2026), this was the only station matching that change pattern.
 
 <img width="1600" height="862" alt="image" src="https://github.com/user-attachments/assets/2af1df0b-c4a0-4c0a-b5fa-3b8c38d2a857" />
 
