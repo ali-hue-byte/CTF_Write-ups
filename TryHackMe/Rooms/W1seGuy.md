@@ -31,8 +31,9 @@ This function creates the encrypted string: using the XOR operation and hexadeci
 
 ###### 2) Connecting to the server and get the encrypted flag
 **Code:** `nc 10.128.169.84 1337`
+
 **Response:** `This XOR encoded text has flag 1: 392a3742<--------------------------cencored----------------------------->
-`What is the encryption key?`
+What is the encryption key?`
 ###### 3) Brute forcing the string to get the key using a python script
 
 ```python
