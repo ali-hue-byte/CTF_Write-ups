@@ -131,6 +131,7 @@ CyberChef recovered the repeating XOR key: `kBSw`.
 
 ###### 3) Creating a custom cookie
 We'll use the key `kBSw` to encrypt the plaintext `{"showpassword":"yes","bgcolor":"#ffffff"}` and replacing the original cookie in Developer tools with the newly generated one.
+
 **New cookie:**
 ```
 EGAgHwQ1IxYYMSQYGSZxTUk7NgRJbnEVDCE8GwQwcU1JYTURDSQ1EUk/
