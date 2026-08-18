@@ -1,8 +1,8 @@
 # Natas17
 #natas #time-based-blind-sql-injection #blind-sql-injection 
 ## Vulnerability:
-> [!NOTE]
-> The application is vulnerable to **Time-Based Blind SQL Injection** because user input is directly concatenated into an SQL query. Unlike normal SQL injection, the application does not reveal the query result, so we cannot use the response content to determine whether a condition is true or false. Instead, we use database functions such as `SLEEP()` to create a time delay when a condition is true. By measuring the response time, we can extract information from the database.
+
+The application is vulnerable to **Time-Based Blind SQL Injection** because user input is directly concatenated into an SQL query. Unlike normal SQL injection, the application does not reveal the query result, so we cannot use the response content to determine whether a condition is true or false. Instead, we use database functions such as `SLEEP()` to create a time delay when a condition is true. By measuring the response time, we can extract information from the database.
 ## Technique:
 We used the same method as [[Natas15]], except that in this level, the web application doesn't provide any visible output indicating whether the SQL query condition is true or false. So we modified it to make the true/false results behave differently, using `SLEEP`.
 The type of commands we used in this level is :
