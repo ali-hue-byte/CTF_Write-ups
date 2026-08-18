@@ -12,16 +12,27 @@ CTF_Write-ups/
 │       ├── Natas0.md
 │       ├── Natas1.md
 │       ├── Natas2.md
-│       └── Natas3.md
-├── HackTheBox/   (coming soon)
-└── TryHackMe/    (coming soon)
-
+│       ├── ...
+│       └── Natas25.md
+├── HackTheBox/
+│   └── Master_Index.md
+└── TryHackMe/
+    ├── Master_Index.md
+    ├── Categories/
+    │   ├── OSINT.md
+    │   ├── Web.md
+    │   ├── AI.md
+    │   ├── Crypto.md
+    │   └── Games.md    
+    └── Rooms/
+        ├── [Room_Name].md 
+        └── ...
 ```
 
 ## Typical Methodology
 Each write-up generally follows this structure:
 
- - **Vulnerability**: description of the identified weakness
+ - **Vulnerability/Problem**: description of the identified weakness
  - **Technique**: tools and approach used
  - **Steps**: detailed walkthrough with commands/screenshots
  - **Password/Flag found**: confirmation only, never disclosed
