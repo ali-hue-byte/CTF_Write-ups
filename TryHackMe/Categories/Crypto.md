@@ -1,7 +1,7 @@
 # Challenges
 ### Easy:
 
-- [[W1seGuy]] — XOR known-plaintext + brute force
+- [W1seGuy](./../Rooms/W1seGuy.md) — XOR known-plaintext + brute force
 
 ### Medium:
 
