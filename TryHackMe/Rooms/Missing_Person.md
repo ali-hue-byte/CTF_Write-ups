@@ -10,7 +10,8 @@ Combined extracting metadata and google searching to find valuable information.
 *Result:* `Pertamina <.........> Circuit`
 
 ###### 2) Event date — Google search
-<img width="1600" height="944" alt="image" src="https://github.com/user-attachments/assets/2803fbbf-713f-4069-a484-afd9e387b67f" />
+<img width="1600" height="944" alt="image" src="https://github.com/user-attachments/assets/0c0da2ab-1ac1-4ff8-bd96-3d1ecccca69b" />
+
 *Result:* `<DATE>`
 
 ###### 3) Restaurant name — image search
