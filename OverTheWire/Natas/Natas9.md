@@ -5,7 +5,7 @@ OS command injection: The application passes user-controlled input directly into
 ## Technique:
 Injected commands to `needle` parameter.
 #### Steps:
-###### 1) Inspecting the source code
+##### 1) Inspecting the source code
 ```php
 <?   
 $key = "";      
@@ -18,7 +18,7 @@ if($key != "") {    
 ?>
 ```
 This means the code takes `needle` parameter value and inserts it directly to the command: `grep -i <input> dictionary.txt`
-###### 2) Exploiting command injection
+##### 2) Exploiting command injection
 We tried multiple commands in order to find the password file.
 Firstly, we tried:
 ```
