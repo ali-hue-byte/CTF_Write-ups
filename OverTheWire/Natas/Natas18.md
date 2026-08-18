@@ -133,7 +133,7 @@ The code revealed important information:
 - The server generates a random session ID using `rand()` function, with a maximum value of `640`. This limited range makes the session identifiers predictable and vulnerable to brute force attacks.
 - The `natas19` password is only revealed when the `admin` value inside `$_SESSION` is set to `1`. However, the application always initializes this value to `0` for newly created sessions.
 
-> [!$_SESSION]
+> [!Note]
 > `$_SESSION` is a PHP **superglobal array** used to store and access user session data across multiple pages. It allows the server to remember information about a user, such as login status or privileges.
 
 ###### 2) Brute forcing session IDs
