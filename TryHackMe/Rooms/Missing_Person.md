@@ -15,7 +15,8 @@ Combined extracting metadata and google searching to find valuable information.
 *Result:* `<DATE>`
 
 ###### 3) Restaurant name — image search
-<img width="1600" height="1109" alt="image" src="https://github.com/user-attachments/assets/b9f3b3eb-ac44-4b25-974d-318a017ad105" />
+<img width="1600" height="1109" alt="image" src="https://github.com/user-attachments/assets/80fd6897-399a-4627-ba1b-ecc1c9a8dd23" />
+
 *Result:* `<NAME>`
 
 ###### 4) Time photo was taken — extracted EXIF metadata from the restaurant photo
