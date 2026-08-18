@@ -3,8 +3,7 @@
 ## Vulnerability:
 
 > [!NOTE]
-> Blind SQLi
-**Blind SQL Injection** is a type of SQL injection where you **cannot see the database results directly**, so you extract information by asking the database **questions** and observing the application's response.
+>**Blind SQL Injection** is a type of SQL injection where you **cannot see the database results directly**, so you extract information by asking the database **questions** and observing the application's response.
 ## Technique:
 Manipulated Blind SQL injection through a python script to retrieve the password for the next level;
 #### Steps:
