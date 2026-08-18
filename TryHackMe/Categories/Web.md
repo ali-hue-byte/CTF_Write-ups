@@ -2,11 +2,11 @@
 ### Easy:
 
 - [Fools Mate](./../Rooms/Fools_Mate.md) — client-side move validation bypass 
-- [[TryHeartMe]] — JWT signature not verified
-- [[Love Letter Locker]] — IDOR 
+- [TryHeartMe](./../Rooms/TryHeartMe.md) — JWT signature not verified
+- [Love Letter Locker](./../Rooms/Love_Letter_Locker.md) — IDOR 
 
 ### Medium:
-- [[Fools Mate, Revenge]] — prototype pollution
+- [Fools Mate, Revenge](./../Rooms/Fools_Mate,_Revenge.md) — prototype pollution
 
 ### Hard:
 
