@@ -122,7 +122,8 @@ Content-Type: text/html; charset=UTF-8
 </html>
 ```
 
-> [!NOTE] Cookie vs Set-Cookie
+> [!NOTE]
+> Cookie vs Set-Cookie
 > - `Cookie` is a **request header** sent by the **client (browser)** to the server. It contains cookies previously stored by the browser.
 > - `Set-Cookie` is a **response header** sent by the **server** to instruct the browser to create or update a cookie.
 >
