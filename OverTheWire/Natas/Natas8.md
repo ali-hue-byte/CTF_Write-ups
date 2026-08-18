@@ -5,7 +5,7 @@ The application stores the secret using reversible reversible encoding instead o
 ## Technique:
 Used python script to decode the secret.
 #### Steps:
-###### 1) Viewing source code
+##### 1) Viewing source code
 The source code revealed the algorithm used to store the secret:
 ```php
 <?php
@@ -26,7 +26,7 @@ if (array_key_exists("submit", $_POST)) {
 
 ?>
 ```
-###### 2) Reversing the encoding algorithm
+##### 2) Reversing the encoding algorithm
 **Script:**
 ```python
 import base64  
@@ -39,7 +39,7 @@ def decode(string):
 print(decode(secret))
 ```
 
-###### 3) Submitting the secret
+##### 3) Submitting the secret
 
 <img width="600" height="222" alt="image" src="https://github.com/user-attachments/assets/be5ed04f-fc26-4c44-ae9b-568bb56d02d9" />
 
