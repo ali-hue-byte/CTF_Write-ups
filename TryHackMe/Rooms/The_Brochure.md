@@ -1,4 +1,4 @@
-# The brochure
+# The Brochure
 #THM #easy #OSINT
 ## Goal: 
 Follow the trail from the photo to the account that posted it, then keep tracing further to find a hidden person the hotel never mentioned.
