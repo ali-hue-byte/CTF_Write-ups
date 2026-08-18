@@ -1,7 +1,7 @@
 # Challenges
 ### Easy:
 
-- [Fools Mate](./../Rooms/Fools_Mate.ms) — client-side move validation bypass 
+- [Fools Mate](./../Rooms/Fools_Mate.md) — client-side move validation bypass 
 - [[TryHeartMe]] — JWT signature not verified
 - [[Love Letter Locker]] — IDOR 
 
