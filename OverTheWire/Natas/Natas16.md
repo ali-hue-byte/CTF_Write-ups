@@ -40,7 +40,6 @@ However, the application filters important characters such as `;`, `|`, `&`, bac
 But we still can use bash command substitution (`$()`).
 
 > [!NOTE]
-> Bash Command Substitution
 > **Bash command substitution** allows the output of a command to be used as part of another command. It is performed using `$(command)`, where Bash executes the command inside the parentheses and replaces it with the command's output.
 > For example:
 >```bash
@@ -128,7 +127,7 @@ for position in range(1,33):
             break
 ```
 The script sends a request for each possible character at each password position. When the correct character is found, which means that the output is `Africans`, it is saved and the process continues until the full password is retrieved.
-> [!NOTE] BeautifulSoup
+> [!NOTE]
 > BeautifulSoup is used to parse the HTML response and extract only the command output from the `<pre>` tag.
 
 **Result:**
