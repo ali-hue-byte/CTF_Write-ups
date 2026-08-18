@@ -15,7 +15,17 @@ CTF_Write-ups/
 │       ├── ...
 │       └── Natas25.md
 ├── HackTheBox/
-│   └── Master_Index.md
+│   ├── Master_Index.md
+│   ├── Categories/
+│   │   ├── Databases.md
+│   │   ├── Web.md
+│   │   ├── Cloud.md
+│   │   ├── Authentication.md
+│   │   ├── Network_services.md
+│   │   └── Privilege_escalation.md    
+│   └── Boxes/
+│       ├── [Box_Name].md 
+│       └── ...
 └── TryHackMe/
     ├── Master_Index.md
     ├── Categories/
