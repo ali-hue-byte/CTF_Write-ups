@@ -21,7 +21,7 @@ if (array_key_exists("passwd", $_REQUEST)) {
 ?>
 ```
 The application validates the password by checking if it contains the string `"iloveyou"`, and if its value is greater than 10. During this comparison, PHP performs type juggling and attempts to convert the string into a numeric value.
-> [!NOTE] Note
+> [!NOTE] 
 > The developer probably wanted to check if the password's length is greater than 10, but the correct code for this comparison is `strlen($_REQUEST["passwd"]) > 10`.
 ###### 2) Exploiting the vulnerability
 We used a password that satisfies both conditions, for example:
