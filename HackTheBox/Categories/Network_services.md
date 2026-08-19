@@ -1,6 +1,7 @@
 # Network services
+## Description
+Challenges covering vulnerabilities and misconfigurations related to network services.
 ## Challenges
-
 #### Very easy
 - [Meow](./../Boxes/Meow.md) — telnet, misconfigured root access
 - [Fawn](./../Boxes/Fawn.md) — FTP, anonymous login
@@ -12,7 +13,5 @@
 #### Easy
 - [Cap](./../Boxes/Cap.md) — FTP, SSH, password reuse, unauthenticated web access, CAP_SETUID
 #### Medium
-
 #### Hard
-
 #### Insane
