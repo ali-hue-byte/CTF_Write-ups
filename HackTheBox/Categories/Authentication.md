@@ -1,4 +1,6 @@
 # Authentication
+## Description
+Challenges focused on authentication weaknesses, misconfigurations, and credential-related vulnerabilities.
 ## Challenges
 #### Very easy
 - [Meow](./../Boxes/Meow.md) — telnet, misconfigured root access
