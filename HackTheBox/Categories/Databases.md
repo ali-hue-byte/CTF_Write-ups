@@ -1,4 +1,6 @@
 # Databases
+## Description
+A collection of challenges focused on database vulnerabilities, misconfigurations, and exploitation.
 ## Challenges
 #### Very easy
 - [Appointment](./../Boxes/Appointment.md) — SQL injection
