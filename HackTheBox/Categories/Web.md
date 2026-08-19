@@ -1,4 +1,6 @@
 # Web
+## Description
+A collection of challenges covering web application vulnerabilities and misconfigurations.
 ## Challenges
 #### Very easy
 - [Appointment](./../Boxes/Appointment.md) — SQL injection
