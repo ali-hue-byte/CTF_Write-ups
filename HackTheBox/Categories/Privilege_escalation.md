@@ -1,4 +1,6 @@
 # Privilege escalation
+## Description
+Challenges featuring privilege escalation techniques and misconfigurations.
 ## Challenges
 #### Very easy
 - [Vaccine](./../Boxes/Vaccine.md) — FTP anonymous login, password cracking, SQL injection, sudo misconfiguration, reverse shell
