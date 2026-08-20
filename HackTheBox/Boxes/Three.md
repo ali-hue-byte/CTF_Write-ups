@@ -2,6 +2,7 @@
 #HTB #very-easy #AWS #Web #reverse-shell #cloud
 ## Target:
 *Name:* Three
+
 *IP:* 10.129.227.248
 ## Vulnerability: 
 The target was vulnerable due to a misconfigured S3 bucket that allowed unauthenticated users to read and write objects. Since the bucket was used as the website's document root, uploading a PHP file resulted in remote code execution on the web server.
