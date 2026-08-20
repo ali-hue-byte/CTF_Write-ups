@@ -9,6 +9,7 @@ The target was vulnerable due to a misconfigured S3 bucket that allowed unauthen
 ## Steps: 
 #### 1) Reconnaissance
 We used nmap to identify open ports and services running on the target machine.
+
 **Code:**
 ```
 nmap -sV 10.129.227.248
