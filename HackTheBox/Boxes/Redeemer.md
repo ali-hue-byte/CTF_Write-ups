@@ -25,6 +25,7 @@ PORT     STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 16.28 seconds
 ```
 Then we'll get more information about the open port `6379`:
+
 **Code:**
 ```
 nmap -sV -p 6379 10.129.128.168
