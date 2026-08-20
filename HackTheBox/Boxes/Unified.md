@@ -226,6 +226,7 @@ Next, we'll use `ace` database, as it is the only non-empty database:
 use ace
 ```
 After that, we'll list the collections on `ace` database:
+
 **Code:**
 ```
 show collections
