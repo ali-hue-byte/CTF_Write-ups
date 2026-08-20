@@ -182,6 +182,7 @@ As we can see, `winPEAS` successfully downloaded on the target machine.
 `ncat` is same as `netcat`, it's just a modernized, improved version developed by the Nmap project. 
 It can also be useful for performing a reverse shell on a windows machine, using `ncat.exe` executable.
 We'll start with installing the packages:
+
 **ncat for Linux machine:**
 ```
 sudo apt install ncat
