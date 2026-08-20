@@ -2,6 +2,7 @@
 #HTB #very-easy #redis #databases #authentication
 ## Target:
 *Name:* Redeemer
+
 *IP:* 10.129.128.168
 ## Vulnerability:
 Redis exposed on port 6379 with no authentication configured, anyone can connect and access all stored data without credentials.
