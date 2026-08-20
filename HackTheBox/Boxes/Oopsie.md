@@ -2,6 +2,7 @@
 #HTB #very-easy #Web #burp-suite #IDOR #reverse-shell #privilege-escalation #suid #path-hijacking 
 ## Target:
 *Name:* Oopsie
+
 *IP:* 10.129.132.19
 ## Vulnerability:
 - IDOR vulnerability (using IDs) allowed access to admin account.
