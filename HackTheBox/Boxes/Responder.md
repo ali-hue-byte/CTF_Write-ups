@@ -2,6 +2,7 @@
 #HTB #very-easy #evil-winrm #john #responder #Web #remote-access #UNC #networks-services
 ## Target:
 *Name:* Responder
+
 *IP:* 10.129.129.69
 ## Vulnerability:
 The web application contains file inclusion vulnerability through `page` parameter that allows it to load local files or remote SMB shares using UNC paths.
