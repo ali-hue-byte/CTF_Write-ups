@@ -76,6 +76,7 @@ MariaDB [(none)]> SHOW DATABASES;
 `information_schema`, `mysql` and `performance_schema` are default system databases that come with every MySQL/MariaDB installation, `htb` database is our target.
 
 Second, we need to connect to `htb`: 
+
 **Code:**
 ```
 USE htb;
