@@ -70,6 +70,7 @@ We can use this behavior to capture Windows authentication information by using 
 
 #### 4) Using Responder
 Initially, we'll start the fake SMB service using Responder:
+
 **Code:**
 ```
 sudo python3 Responder.py -I tun0
