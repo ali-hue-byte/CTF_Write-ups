@@ -36,7 +36,9 @@ HTTP is running on port 80 which indicates the serves hosts a web application.
 <img width="2559" height="1360" alt="image" src="https://github.com/user-attachments/assets/1541bfdd-37ca-4893-bd1b-901b81ca4ea5" />
 
 <img width="405" height="163" alt="image" src="https://github.com/user-attachments/assets/03a2a166-9bdd-43ce-aa36-7cb58df431ce" />
+
 The contacts section revealed the virtual host name of the server: `megacorp.com`
+
 #### 3) Findings in the web application code
 Using Burp suite, we identified a hidden login page directory:
 <img width="352" height="24" alt="image" src="https://github.com/user-attachments/assets/57a8c8b8-1ae4-461c-b0c0-2a2fa1291453" />
