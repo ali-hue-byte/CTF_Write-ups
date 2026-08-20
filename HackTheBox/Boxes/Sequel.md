@@ -108,6 +108,7 @@ show tables;
 ```
 
 The database has only 2 tables, both are checked for the flag:
+
 **Code:**
 ```
 select * from users;
