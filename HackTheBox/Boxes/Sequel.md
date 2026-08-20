@@ -29,6 +29,7 @@ Nmap done: 1 IP address (1 host up) scanned in 162.19 seconds
 ```
 #### 2) Connection to mysql database
 We'll try to connect as admin/root, as they are sometimes left with empty or default credentials
+
 **Code:**
 ```
 mysql -u root -h 10.129.128.223
