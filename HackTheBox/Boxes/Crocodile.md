@@ -2,6 +2,7 @@
 #HTB #very-easy #ftp #Web #gobuster #networks-services #authentication
 ## Target:
 *Name:* Crocodile
+
 *IP:*  10.129.128.254
 ## Vulnerability:
 Anonymous login was enabled on the FTP service, allowing access to files containing plaintext usernames and passwords.
