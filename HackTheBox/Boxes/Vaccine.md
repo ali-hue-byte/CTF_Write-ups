@@ -82,6 +82,7 @@ Archive:  backup.zip
 The archive requires a password to unzip it.
 #### 3) Cracking the zip file's password
 `John the ripper` toolset comes with a script (`zip2john`) that generates a hash from a password protected zip archive, This allows us to perform password cracking attacks against the extracted hash.
+
 **Code:**
 ```
 zip2john backup.zip > psswd.txt
