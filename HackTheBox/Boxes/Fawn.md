@@ -2,6 +2,7 @@
 #HTB #very-easy #FTP #networks-services
 ## Target: 
 *Name:* Fawn
+
 *IP:* 10.129.126.213
 ## Vulnerability: 
 Anonymous login on FTP service was enabled.
