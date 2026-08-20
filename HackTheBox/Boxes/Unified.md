@@ -110,6 +110,7 @@ cat user.txt
 ```
 #### 6) MongoDB database
 Firstly, we'll check what services are running on the machine locally:
+
 **Code:**
 ```
 ps aux
@@ -151,6 +152,7 @@ unifi         67  0.6  4.1 1102720 85204 ?       Sl   22:31   0:01 bin/mongod --
 ```
 That means it is running on port `27117` of local host.
 #### 7) Connecting to the database
+
 **Code:**
 ```
 mongo --port 27117
