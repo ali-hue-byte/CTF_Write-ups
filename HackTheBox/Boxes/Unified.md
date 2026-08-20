@@ -346,7 +346,9 @@ Using the new password, we connected successfully to UniFi `administrator` accou
 #### 10) Root flag
 <img width="1105" height="378" alt="image" src="https://github.com/user-attachments/assets/64565dc3-07c4-43dc-aaa8-81948a658405" />
 The UniFi admin panel's settings revealed plaintext SSH credentials for the root account stored within the application:
+
 *Username:* root
+
 *Password:* `NotACrackablePassword4U2022`
 
 Finally, we'll log in to the target machine as root, via SSH, then we'll find the root flag:
