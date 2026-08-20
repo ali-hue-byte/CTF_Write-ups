@@ -2,6 +2,7 @@
 #HTB #adventure-mode #easy #wireshark #ftp #networks-services #privilege-escalation #authentication #Web #remote-access 
 ## Target: 
 *Name:* Cap
+
 *IP:* 10.129.75.26
 ## Vulnerability:
 - Network traffic captures were accessible directly through the web application without authentication.
