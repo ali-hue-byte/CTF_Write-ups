@@ -163,11 +163,15 @@ Now we have admin account credentials, we can log in to the web application:
 
 > [!NOTE]
 >We firstly tried sql injection on the login page but it didn't work.
+> 
 <img width="2559" height="1346" alt="image" src="https://github.com/user-attachments/assets/d5da5f17-798b-409b-88b8-fd3dfaf859c2" />
+
 <img width="2559" height="1368" alt="image" src="https://github.com/user-attachments/assets/499a8229-aba0-4965-8430-fa7b36c9691d" />
 
 By checking the URL, we can see that the `search` GET parameter is used by the application to filter car entries. We could test it to see if it's SQL injectable, but instead of doing it manually, we will use a tool called sqlmap .
+
 <img width="367" height="39" alt="image" src="https://github.com/user-attachments/assets/131db867-6d60-44ea-a614-1140050bee57" />
+
 #### 7) Using sqlmap
 
 **Code:**
