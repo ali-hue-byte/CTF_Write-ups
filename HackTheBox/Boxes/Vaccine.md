@@ -2,6 +2,7 @@
 #HTB #very-easy #ftp #sql-injection #reverse-shell #privilege-escalation #Web #password-cracking #sudo #networks-services #databases #authentication #john
 ## Target:
 *Name:* Vaccine
+
 *IP:* 10.129.130.190
 ## Vulnerability:
 - Anonymous FTP access exposed sensitive web application files.
