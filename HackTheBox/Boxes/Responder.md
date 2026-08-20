@@ -13,6 +13,7 @@ UNC (Universal Naming Convention) path is a standard format used in Windows to f
 ## Steps:
 #### 1) Reconnaissance
 We used nmap to identify open ports and services running on them.
+
 **Code:**
 ```
 nmap -sV 10.129.129.69 
