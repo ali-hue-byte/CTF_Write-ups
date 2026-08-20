@@ -2,6 +2,7 @@
 #HTB #very-easy #SQL #SMB #databases #networks-services #authentication #privilege-escalation #evil-winrm #reverse-shell #ncat
 ## Target:
 *Name:* Archetype
+
 *IP:* 10.129.133.41
 ## Vulnerability:
 - Anonymous login enabled on SMB shares, exposing sensitive plain text information.
