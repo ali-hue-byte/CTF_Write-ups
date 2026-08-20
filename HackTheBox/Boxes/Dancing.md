@@ -2,6 +2,7 @@
 #HTB #SMB #very-easy #networks-services
 ## Target:
 *Name:* Dancing
+
 *IP:* 10.129.127.221
 ## Vulnerability: 
 SMB share (`WorkShares`) is accessible without credentials.
