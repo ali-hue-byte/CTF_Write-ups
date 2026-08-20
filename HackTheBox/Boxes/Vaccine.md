@@ -51,6 +51,7 @@ Using binary mode to transfer files.
 ftp> 
 ```
 The server allows anonymous login to the FTP service. We can now get the files stored by that service.
+
 **Full process:**
 ```
 ftp> ls
