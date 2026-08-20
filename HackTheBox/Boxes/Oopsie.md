@@ -41,18 +41,27 @@ The contacts section revealed the virtual host name of the server: `megacorp.com
 
 #### 3) Findings in the web application code
 Using Burp suite, we identified a hidden login page directory:
+
 <img width="352" height="24" alt="image" src="https://github.com/user-attachments/assets/57a8c8b8-1ae4-461c-b0c0-2a2fa1291453" />
+
 <img width="1236" height="1193" alt="image" src="https://github.com/user-attachments/assets/5a0720a3-2a8f-4243-bfc4-2ae6018e9e27" />
+
 But upload page requires admin account to access. 
 #### 4) `admin` account ID
 After logging in, the URL and request captured by burp suite indicate the use of ids by the web application to identify users. When logged in as guest, we were assigned to ID 2:
+
 <img width="673" height="260" alt="image" src="https://github.com/user-attachments/assets/da221caa-d795-4d70-be85-10b49770441b" />
+
 We tried to change the URL parameter `ID` to another value like 1, and it redirected us to admin account, confirming an IDOR vulnerability:
+
 <img width="1312" height="708" alt="image" src="https://github.com/user-attachments/assets/14ecfa9b-6068-4b47-bc1b-49f42eeda0c5" />
+
 To stay logged in as `admin` we need to change cookie values to `user=<NUMBER>` and `role=admin`, in the developer tools:
+
 <img width="1322" height="413" alt="image" src="https://github.com/user-attachments/assets/39f07c7c-fbba-42c2-95d8-19487d9b0139" />
 
 We can now access the uploads page:
+
 <img width="1307" height="989" alt="image" src="https://github.com/user-attachments/assets/e6c096a3-a3a9-48dc-8f69-ccd7c3c87e0b" />
 
 #### 4) Reverse shell
