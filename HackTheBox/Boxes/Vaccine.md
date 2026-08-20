@@ -69,6 +69,7 @@ local: backup.zip remote: backup.zip
 2533 bytes received in 00:00 (66.96 KiB/s)
 ```
 Then, we'll unzip the file locally using `unzip`:
+
 **Code:**
 ```
 unzip backup.zip
