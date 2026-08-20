@@ -15,6 +15,7 @@
 ## Steps:
 #### 1) Reconnaissance
 Using nmap, we identified open ports and the services running on each one.
+
 **Code:**
 ```
 nmap -sV 10.129.130.190
