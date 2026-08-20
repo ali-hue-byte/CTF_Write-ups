@@ -143,6 +143,7 @@ unifi       3793  0.0  0.1  34408  2948 pts/1    R+   13:27   0:00 ps aux
 > *The reverse shell lands inside a Docker container running the UniFi application (1st command in the result indicates it), not directly on the host OS. The container runs as the `unifi` user.*
 
 The most important finding is line 4: `MongoDb` database is running.
+
 The output of the command got cut off, to see the full information, we can use:
 ```
 ps aux | grep mongod
