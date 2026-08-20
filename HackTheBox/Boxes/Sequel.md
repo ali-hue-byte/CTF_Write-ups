@@ -40,6 +40,7 @@ ERROR 2026 (HY000): TLS/SSL error: SSL is required, but the server does not supp
 ```
 
 We can use `--skip-ssl` option to skip ssl: 
+
 **Code:**
 ```
 mysql -u root -h 10.129.128.223 --skip-ssl
