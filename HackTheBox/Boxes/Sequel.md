@@ -91,6 +91,7 @@ MariaDB [htb]>
 ```
 
 Third, we list the available tables in the `htb` database using the command:
+
 **Code:**
 ```
 show tables;
