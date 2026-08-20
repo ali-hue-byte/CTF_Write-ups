@@ -279,6 +279,7 @@ robert@oopsie:/tmp$ echo $PATH
 /tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 ```
 Notice the `/tmp` directory is the first one in the variable, that means it will be the first one to be checked, and eventually the fake `cat` will be executed.
+
 **Running the fake `cat` with `bugtracker` privileges:**
 ```
 robert@oopsie:/tmp$ /usr/bin/bugtracker
