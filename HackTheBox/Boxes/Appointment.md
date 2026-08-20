@@ -2,6 +2,7 @@
 #HTB #very-easy #sql-injection #Web #databases
 ## Target: 
 *Name:* Appointment
+
 *IP:* 10.129.128.188
 ## Vulnerability:
 SQL injection, unsanitized user input allows authentication bypass.
