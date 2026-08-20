@@ -2,6 +2,7 @@
 #HTB #very-easy #databases #MySQL #authentication
 ## Target:
 *Name:* Sequel
+
 *IP:* 10.129.128.223
 ## Vulnerability:
 MySQL `root` account was left without password, which allowed unauthenticated access to all databases.
