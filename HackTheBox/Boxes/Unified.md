@@ -2,6 +2,7 @@
 #HTB #very-easy #CVE #databases #Web #authentication #privilege-escalation #password-cracking  #java #reverse-shell 
 ## Target:
 *Name:* Unified
+
 *IP:* 10.129.219.164
 ## Vulnerability:
 - The use of old version of UniFi which was vulnerable to Log4shell vulnerability.
