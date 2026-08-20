@@ -2,6 +2,7 @@
 #HTB #very-easy #telnet #remote-access #networks-services #authentication
 ## Target:
 *Name:* Meow
+
 *IP:* 10.129.126.178
 ## Vulnerability: 
 Misconfiguration, this machine allows access as `root` using telnet without password. 
