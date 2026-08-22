@@ -96,7 +96,7 @@ Finished
 We have 2 important findings:
 - `git.nexus.htb`: returned a status code of 200 (FOUND), indicating that the virtual host is active and accessible.
 - `billing.nexus.htb`: returned a status code of 302 (REDIRECT), redirecting to `http://billing.nexus.htb/admin/login`, which reveals an `/admin/login` endpoint.
-- 
+
 We'll investigate both of them.
 
 #### 4) Exploring the Git VHost
