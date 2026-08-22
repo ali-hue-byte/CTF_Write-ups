@@ -12,6 +12,8 @@ Challenges covering vulnerabilities and misconfigurations related to network ser
 - [Archetype](./../Boxes/Archetype.md) — SMB anonymous login, privileges misconfiguration, plaintext credentials, reverse shell
 #### Easy
 - [Cap](./../Boxes/Cap.md) — FTP, SSH, password reuse, unauthenticated web access, CAP_SETUID
+- [Nexus](./../Boxes/Nexus.md) — CVE-2026-38526, SSH, Git, Git object manipulation, SSH key generation, privilege escalation
+
 #### Medium
 #### Hard
 #### Insane
