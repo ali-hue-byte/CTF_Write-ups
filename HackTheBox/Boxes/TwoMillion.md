@@ -2,6 +2,7 @@
 #HTB #easy #adventure-mode #burp-suite #CVE #networks-services #reverse-shell #privilege-escalation #Web #Linux 
 ## Target:
 *Name*: TwoMillion
+
 *IP:* 10.129.84.146
 ## Vulnerability:
 - **Exposed/insecure invite-code generation**: obtain a valid invitation code and create an account.
