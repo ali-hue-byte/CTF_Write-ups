@@ -6,6 +6,7 @@ Challenges focused on exploiting known CVEs and understanding how these vulnerab
 - [Unified](./../Boxes/Unified.md) — CVE-2021-44228, MongoDB misconfiguration, reverse shell  
 #### Easy
 - [Nexus](./../Boxes/Nexus.md) — CVE-2026-38526, SSH, Git, Git object manipulation, SSH key generation, privilege escalation
+- [TwoMillion](./../Boxes/TwoMillion.md) — CVE-2023-0386, SSH, Linux, command injection, reverse shell, privilege escalation
 #### Medium
 #### Hard
 #### Insane
