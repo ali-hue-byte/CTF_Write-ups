@@ -12,6 +12,8 @@ A collection of challenges covering web application vulnerabilities and misconfi
 - [Unified](./../Boxes/Unified.md) — CVE-2021-44228, MongoDB misconfiguration, reverse shell  
 #### Easy
 - [Cap](./../Boxes/Cap.md) — FTP, SSH, password reuse, unauthenticated web access, CAP_SETUID
+- [TwoMillion](./../Boxes/TwoMillion.md) — CVE-2023-0386, SSH, Linux, command injection, reverse shell, privilege escalation
+
 #### Medium
 #### Hard
 #### Insane
