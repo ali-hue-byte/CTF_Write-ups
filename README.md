@@ -22,6 +22,7 @@ CTF_Write-ups/
 │   │   ├── Cloud.md
 │   │   ├── Authentication.md
 │   │   ├── Network_services.md
+│   │   ├── CVE.md
 │   │   └── Privilege_escalation.md    
 │   └── Boxes/
 │       ├── [Box_Name].md 
