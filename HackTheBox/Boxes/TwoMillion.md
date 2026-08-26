@@ -1,5 +1,5 @@
 # TwoMillion
-#HTB #easy #adventure-mode #burp-suite #CVE #networks-services #reverse-shell #privilege-escalation #Web #Linux 
+#HTB #easy #adventure-mode #burp-suite #CVE #networks-services #reverse-shell #privilege-escalation #Web #Linux #authentication
 ## Target:
 *Name*: TwoMillion
 
