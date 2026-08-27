@@ -438,7 +438,7 @@ impacket-addcomputer 'support.htb/support:Ironside47pleasure40Watchful' -compute
 [*] Successfully added machine account PC$ with password zAUIhdDQBExlScPRasaEM56Hv5hwbJTQ.
 ```
 
-> [!NOTE] $
+> [!NOTE]
 > `PC$` ends with a $ because in Active Directory, a computer account's `sAMAccountName` normally ends with `$`.
 
 **Second step:**
