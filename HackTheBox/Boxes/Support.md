@@ -553,9 +553,10 @@ C:\Users\Administrator\Desktop>type root.txt
 > [!NOTE]
 > ## Resource-Based Constrained Delegation (RBCD)
 >
->**RBCD (Resource-Based Constrained Delegation)** is an Active Directory mechanism that allows a computer or service account to **act on behalf of another user when accessing a specific target computer/service**.
+>**RBCD (Resource-Based Constrained Delegation)** is an Active Directory mechanism that allows a computer or service account to **act on behalf**
+> **of another user when accessing a specific target computer/service**.
 >
-The configuration is stored on the **target computer** in the following attribute:
+>The configuration is stored on the **target computer** in the following attribute:
 >
 >```
 >msDS-AllowedToActOnBehalfOfOtherIdentity
@@ -567,8 +568,8 @@ For example, in our case:
 >
 >```
 >PC$  ───────────────►  DC$
- >      trusted to act
- >      on behalf of users
+>      trusted to act
+>      on behalf of users
 >```
 >
 The `DC$` computer object contains:
@@ -576,7 +577,7 @@ The `DC$` computer object contains:
 >```
 >msDS-AllowedToActOnBehalfOfOtherIdentity
 >        │
- >        └── PC$
+>        └── PC$
 >```
 >
 >This means:
@@ -588,31 +589,32 @@ The attacker controls `PC$`, so they can use **Kerberos S4U** mechanisms to requ
 The process is:
 >
 >```
-Attacker
-   │
-   │ controls
-   ▼
-PC$
-   │
-   │ RBCD permission
-   ▼
-DC$
-   │
-   │ S4U2Self / S4U2Proxy
-   ▼
-Administrator
-   │
-   │ Kerberos service ticket
-   ▼
-Access to DC$
+>Attacker
+>   │
+>   │ controls
+>   ▼
+>  PC$
+>   │
+>   │ RBCD permission
+>   ▼
+>  DC$
+>   │
+>   │ S4U2Self / S4U2Proxy
+>   ▼
+> Administrator
+>   │
+>   │ Kerberos service ticket
+>   ▼
+>Access to DC$
 >```
->So we use Kerberos S4U to obtain a service ticket saying, effectively:
+> So we use Kerberos S4U to obtain a service ticket saying, effectively:
 >
 >```
 >"I am accessing CIFS on DC$ as Administrator."
 >```
 >
-Then `DC$` verifies the Kerberos ticket.
+> Then `DC$` verifies the Kerberos ticket.
+
 ## Flag:
 [Not disclosed — solve it yourself!]
 ## Key takeaway:
