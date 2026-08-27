@@ -562,31 +562,32 @@ C:\Users\Administrator\Desktop>type root.txt
 >msDS-AllowedToActOnBehalfOfOtherIdentity
 >```
 >
->### How it works
+> ### How it works
 >
-For example, in our case:
+> For example, in our case:
 >
+> ```
+> PC$  ───────────────►  DC$
+>       trusted to act
+>       on behalf of users
 >```
->PC$  ───────────────►  DC$
->      trusted to act
->      on behalf of users
->```
 >
-The `DC$` computer object contains:
+> The `DC$` computer object contains:
 >
->```
->msDS-AllowedToActOnBehalfOfOtherIdentity
+> ```
+> msDS-AllowedToActOnBehalfOfOtherIdentity
 >        │
 >        └── PC$
->```
+> ```
 >
->This means:
+> This means:
 >
 > `PC$` is trusted to act on behalf of users when accessing `DC$`.
 >
-The attacker controls `PC$`, so they can use **Kerberos S4U** mechanisms to request a service ticket representing another user, such as `Administrator`.
+> The attacker controls `PC$`, so they can use **Kerberos S4U** mechanisms to request a service ticket representing another user, such as
+> `Administrator`.
 >
-The process is:
+> The process is:
 >
 >```
 >Attacker
