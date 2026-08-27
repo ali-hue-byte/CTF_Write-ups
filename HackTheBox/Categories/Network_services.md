@@ -14,6 +14,7 @@ Challenges covering vulnerabilities and misconfigurations related to network ser
 - [Cap](./../Boxes/Cap.md) — FTP, SSH, password reuse, unauthenticated web access, CAP_SETUID
 - [Nexus](./../Boxes/Nexus.md) — CVE-2026-38526, SSH, Git, Git object manipulation, SSH key generation, privilege escalation
 - [TwoMillion](./../Boxes/TwoMillion.md) — CVE-2023-0386, SSH, Linux, command injection, reverse shell, privilege escalation
+- [Support](./../Boxes/Support.md) — SMB anonymous login, hardcoded credentials, RBCD, privilege escalation, windows 
 
 #### Medium
 #### Hard
