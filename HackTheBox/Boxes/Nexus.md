@@ -588,15 +588,7 @@ print("Done: " + sha)
 >
 > ### 3. Getting the SSH public key
 >
-> The script first checks that it is running inside a Git repository:
->
-> ```python
-> if not os.path.isdir(".git"):
->     print("Run inside git repo")
->     sys.exit(1)
-> ```
->
-> It then reads an SSH public key from:
+> The script reads an SSH public key from:
 >
 > ```text
 > /tmp/.k.pub
