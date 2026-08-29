@@ -16,5 +16,6 @@ Challenges focused on authentication weaknesses, misconfigurations, and credenti
 - [Nexus](./../Boxes/Nexus.md) — CVE-2026-38526, SSH, Git, Git object manipulation, SSH key generation, privilege escalation
 - [TwoMillion](./../Boxes/TwoMillion.md) — CVE-2023-0386, SSH, Linux, command injection, reverse shell, privilege escalation
 #### Medium
+- [Principal](./../Boxes/Principal.md) — CVE-2026-29000, JWT, SSH CA, SSH certificate forgery, privilege escalation
 #### Hard
 #### Insane
