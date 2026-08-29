@@ -115,18 +115,20 @@ print(token.serialize(compact=True))
 eyJhbGciOiJSU0EtT0FFUC0yNTYiLCJlbmMiOiJBMjU2R0NNIn0.QorTXTYWURb_86oplREeNuWqO6vCifUrKiB71L3xwG1Dryy3HcnpM8Hfr0V29negQ_l1JkJdIAVDT5nFu-u2XX8FOc3ZV22xc95_g_vUKz24v4di9aUPBob_9c3gM_3Xqa5hDboV0AlrmS6xyTaOUPYgN_EHd4yKa5-5Kge5sFPXVunNMpWFJnaEqd9-36PlWGY0Ti2xKAJiJoRRmQ6QTR7Yib1wlRDb6VGyWI9mp0Na3zj52470x8x1inz4O7lcRYti1i-4lOoz-z2R4OBOCl4BRm__JPy12q2mLBwLOBrS71xdhAxZjQJLjo-M9OWeYg4Gctv5N3PI1bwAI-_uQg.vQ9OkIdsotbZejmp.VGdRf3iChsWzTSnCdMS2Pnh-i4nGgaFo16iobWECijfF5RZHeLoWO6Hs-Vctl1ZA38aKmeR8_6E5bG0-IlCrsyyd5XT8mKoged0-UJKsNnHcgGlN-f2gibRUWrN-jA.eqHm8ZbSU_FBiK2wF_-fAg
 ```
 **Explanation:**
+
 The script retrieves the server's RSA public key in JWK format and uses it to create a JWE. 
 First, an unsigned PlainJWT is constructed by Base64URL-encoding a JWT header with `alg: none` and a payload containing the forged claims. 
 The resulting `header.payload.` token is then used as the plaintext of a JWE. The JWE encrypts this PlainJWT using the server's RSA public key, with `RSA-OAEP-256` for key management and `A256GCM` for content encryption. 
 Finally, the JWE is serialized in compact format so it can be sent as a Bearer token in the `Authorization` header.
 
 We stored the resulting token in the browser's storage as `auth_token` and refreshed the page.
+
 **Result:**
 
 <img width="2465" height="1283" alt="image" src="https://github.com/user-attachments/assets/99630025-476c-4e92-b7ef-0971a640745c" />
 
 #### 5) Further investigation on the web application
-We discovered that the user `svc-deploy` had recently obtained an SSH certificate.:
+We discovered that the user `svc-deploy` had recently obtained an SSH certificate:
 
 <img width="1730" height="82" alt="image" src="https://github.com/user-attachments/assets/e44db35a-35c1-42c4-be12-9753ac3fe682" />
 
