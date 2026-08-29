@@ -13,8 +13,8 @@ A collection of challenges covering web application vulnerabilities and misconfi
 #### Easy
 - [Cap](./../Boxes/Cap.md) — FTP, SSH, password reuse, unauthenticated web access, CAP_SETUID
 - [TwoMillion](./../Boxes/TwoMillion.md) — CVE-2023-0386, SSH, Linux, command injection, reverse shell, privilege escalation
-
 #### Medium
+- [Principal](./../Boxes/Principal.md) — CVE-2026-29000, JWT, SSH CA, SSH certificate forgery, privilege escalation
 #### Hard
 #### Insane
 
